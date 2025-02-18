@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gato Saludando</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #cat {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/440px-Cat_November_2010-1a.jpg') no-repeat center center;
+            background-size: cover;
+            animation: moveCat 5s linear infinite;
+        }
+        @keyframes moveCat {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(300px); }
+            100% { transform: translateX(0); }
+        }
+        .letter {
+            display: inline-block;
+            font-size: 2em;
+            color: #333;
+            position: relative;
+            animation: moveLetter 2s infinite;
+        }
+        .letter:nth-child(1) { animation-delay: 0s; }
+        .letter:nth-child(2) { animation-delay: 0.5s; }
+        .letter:nth-child(3) { animation-delay: 1s; }
+        .letter:nth-child(4) { animation-delay: 1.5s; }
+        @keyframes moveLetter {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="greeting">
+        <span class="letter">H</span>
+        <span class="letter">O</span>
+        <span class="letter">L</span>
+        <span class="letter">A</span>
+    </div>
+    <div id="cat"></div>
+</body>
+</html>
